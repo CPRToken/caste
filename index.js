@@ -117,27 +117,28 @@ const appendHashTagsAndMentions = (tweetContent) => {
 
 
 
+const trimToCompleteSentence = (tweet) => {
+    if (tweet.length <= 280) return tweet;
 
+    let lastValidEnd = tweet.lastIndexOf('.', 279);
+    if (lastValidEnd === -1) lastValidEnd = tweet.lastIndexOf('!', 279);
+    if (lastValidEnd === -1) lastValidEnd = tweet.lastIndexOf('?', 279);
 
-
+    return lastValidEnd !== -1 ? tweet.substring(0, lastValidEnd + 1) : tweet.substring(0, 277) + "...";
+};
 
 const tweet = async () => {
     try {
         const tweetContent = await getGeneratedTweet();
         if (tweetContent) {
             const fullTweet = appendHashTagsAndMentions(tweetContent);
-            const trimmedTweet = fullTweet.length > 280 ? fullTweet.substring(0, 277) + "..." : fullTweet;
-
-
-
-
+            const trimmedTweet = trimToCompleteSentence(fullTweet);
 
             // 1. Fetch the image URL for "AI" topic
             const mediaData = await fetchMedia("pesos, efectivo, dinero, monedas, billetes");
             const filename = `ai_media_${Date.now()}`;
 
             let mediaId;
-
 
             if (mediaData.type === "image") {
                 const localImagePath = `./media/${filename}.jpg`;
@@ -154,7 +155,6 @@ const tweet = async () => {
                     media_ids: [mediaId]
                 }
             });
-
         } else {
             console.log("Failed to generate a tweet.");
         }
@@ -163,12 +163,13 @@ const tweet = async () => {
     }
 };
 
+
 // Schedule the tweet function to run every 10 minutes
-cron.schedule('0 */2 * * *', tweet);
+cron.schedule('*/1 * * * *', tweet);
 
 
 
-console.log("Started scheduler to tweet every 2 hours.");
+console.log("Started scheduler to tweet every 1 minutes.");
 
 
 
