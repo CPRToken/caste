@@ -72,26 +72,25 @@ async function fetchMedia(query) {
 
 
 const prompts = [
-    "Aquí tienes 10 formas de optimizar tus impuestos en Chile desde casa.",
-    "Comparte tus opiniones sobre el impacto de la reforma tributaria en Chile.",
-    "Cuáles son las últimas novedades en regulaciones fiscales en Latinoamérica?",
-    "Cómo están revolucionando las fintech el sistema tributario en Chile?",
-    "Qué papel juegan las políticas fiscales en la formación de empleos del futuro para grandes empresas?",
+    "¿Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
+     "¿Cuáles son las últimas novedades en regulaciones fiscales en Latinoamérica?",
+    "¿Cómo están revolucionando las fintech el sistema tributario en Chile?",
+    "¿Qué papel juegan las políticas fiscales en la formación de empleos del futuro para grandes empresas?",
     "Comparte ideas sobre la relación entre la evasión fiscal y la economía en Latinoamérica.",
-    "Cómo impactan las leyes tributarias en el sector salud y médico en Chile?",
-    "Cuáles son los riesgos potenciales de no estar al día con los impuestos para las pequeñas empresas?",
-    "Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
+    "¿Cómo impactan las leyes tributarias en el sector salud y médico en Chile?",
+    "¿Cuáles son los riesgos potenciales de no estar al día con los impuestos para las pequeñas empresas?",
+    "¿Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
     "Discute los impactos de la digitalización en la recaudación de impuestos en la era moderna.",
-    "Qué papel juegan las políticas fiscales en la formación de empleos del futuro en Latinoamérica?",
-    "Cómo están beneficiando las nuevas leyes fiscales al sistema de salud en Chile?",
+    "¿Qué papel juegan las políticas fiscales en la formación de empleos del futuro en Latinoamérica?",
+    "¿Cómo están beneficiando las nuevas leyes fiscales al sistema de salud en Chile?",
     "Describe los beneficios de la digitalización en la gestión tributaria.",
-    "Cuál es la intersección entre políticas fiscales y soluciones de energía renovable en Latinoamérica?",
-    "Cómo contribuyen las nuevas leyes fiscales a experiencias de aprendizaje personalizadas? Con ejemplos.",
+    "¿Cuál es la intersección entre políticas fiscales y soluciones de energía renovable en Latinoamérica?",
+    "¿Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
     "Destaca la importancia de la regulación fiscal en el transporte moderno en Chile.",
     "Comparte una perspectiva sobre la automatización impulsada por fintech en contabilidad y seguridad.",
     "Discute el papel de las políticas fiscales en las predicciones del mercado financiero y económico.",
     "Comparte ideas sobre la influencia de la regulación tributaria en el arte y diseño modernos.",
-    "Reemplazarán las fintech a los contadores? Discute los pros y contras.",
+    "¿Reemplazarán las fintech a los contadores? Discute los pros y contras.",
 
 ];
 async function getGeneratedTweet() {
@@ -102,7 +101,7 @@ async function getGeneratedTweet() {
         const response = await openai.completions.create({
             model: "gpt-3.5-turbo-instruct",
             prompt: randomPrompt,
-            max_tokens: 200,
+            max_tokens: 300,
             temperature: 0.7
         });
 
@@ -162,6 +161,8 @@ const tweet = async () => {
         console.error("Error posting tweet:", e);
     }
 };
+
+
 
 
 cron.schedule('0 */2 * * *', tweet);
