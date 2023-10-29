@@ -72,25 +72,53 @@ async function fetchMedia(query) {
 
 
 const prompts = [
-    "¿Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
-     "¿Cuáles son las últimas novedades en regulaciones fiscales en Latinoamérica?",
-    "¿Cómo están revolucionando las fintech el sistema tributario en Chile?",
-    "¿Qué papel juegan las políticas fiscales en la formación de empleos del futuro para grandes empresas?",
+    "Cómo maximizar tu devolución de impuestos este año?",
+    "Qué estrategias financieras puedes usar para aumentar tu devolución de impuestos?",
+    "Cómo la Inteligencia Artificial está ayudando en la optimización de la declaración de impuestos?",
+    "Cuáles son las herramientas de IA más efectivas para la planificación fiscal?",
+    "Cómo la tecnología está cambiando la forma en que hacemos nuestras declaraciones de impuestos?",
+    "Qué impacto tiene la legislación fiscal en tus inversiones a largo plazo?",
+    "Cómo puedes usar la Inteligencia Artificial para detectar deducciones fiscales que podrías haber pasado por alto?",
+    "Cuál es el futuro de la planificación fiscal con el avance de la Inteligencia Artificial?",
+    "Cómo están las fintechs ayudando a las personas a manejar sus impuestos de manera más eficiente?",
+    "Qué deberías saber sobre las criptomonedas y los impuestos?",
+    "Cuáles son las implicaciones fiscales de invertir en bienes raíces?",
+    "Cómo puedes prepararte para la temporada de impuestos usando tecnología moderna?",
+    "Qué impacto tienen los cambios en las leyes fiscales en los autónomos y freelancers?",
+    "Cómo la planificación fiscal inteligente puede mejorar tu bienestar financiero?",
+    "Qué papel juega la automatización en la eficiencia de la gestión fiscal?",
+    "Cómo elegir un software de impuestos que se adapte a tus necesidades?",
+    "Qué consideraciones fiscales debes tener en cuenta al iniciar un nuevo negocio?",
+    "Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
+    "Cuáles son las últimas novedades en regulaciones fiscales en Latinoamérica?",
+    "Cómo están revolucionando las fintech el sistema tributario en Chile?",
+    "Qué papel juegan las políticas fiscales en la formación de empleos del futuro para grandes empresas?",
     "Comparte ideas sobre la relación entre la evasión fiscal y la economía en Latinoamérica.",
-    "¿Cómo impactan las leyes tributarias en el sector salud y médico en Chile?",
-    "¿Cuáles son los riesgos potenciales de no estar al día con los impuestos para las pequeñas empresas?",
-    "¿Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
+    "Cómo impactan las leyes tributarias en el sector salud y médico en Chile?",
+    "Cuáles son los riesgos potenciales de no estar al día con los impuestos para las pequeñas empresas?",
+    "Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
     "Discute los impactos de la digitalización en la recaudación de impuestos en la era moderna.",
-    "¿Qué papel juegan las políticas fiscales en la formación de empleos del futuro en Latinoamérica?",
-    "¿Cómo están beneficiando las nuevas leyes fiscales al sistema de salud en Chile?",
+    "Qué papel juegan las políticas fiscales en la formación de empleos del futuro en Latinoamérica?",
+    "Cómo están beneficiando las nuevas leyes fiscales al sistema de salud en Chile?",
     "Describe los beneficios de la digitalización en la gestión tributaria.",
-    "¿Cuál es la intersección entre políticas fiscales y soluciones de energía renovable en Latinoamérica?",
-    "¿Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
+    "Cuál es la intersección entre políticas fiscales y soluciones de energía renovable en Latinoamérica?",
+    "Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
     "Destaca la importancia de la regulación fiscal en el transporte moderno en Chile.",
     "Comparte una perspectiva sobre la automatización impulsada por fintech en contabilidad y seguridad.",
     "Discute el papel de las políticas fiscales en las predicciones del mercado financiero y económico.",
     "Comparte ideas sobre la influencia de la regulación tributaria en el arte y diseño modernos.",
     "¿Reemplazarán las fintech a los contadores? Discute los pros y contras.",
+    "Analiza los efectos de la globalización en la economía chilena y su relación con la tributación internacional.",
+    "Explora cómo la tecnología blockchain está transformando los procesos fiscales en el mundo empresarial.",
+    "Habla sobre los desafíos y beneficios de la digitalización de los registros contables en el sector financiero.",
+    "Examina el impacto de la pandemia de COVID-19 en las políticas fiscales y su influencia en la recuperación económica.",
+    "Reflexiona sobre las implicaciones económicas de la evasión fiscal y las medidas para combatirla en América Latina.",
+    "Comenta sobre la relación entre la sostenibilidad ambiental y las políticas fiscales en la industria energética.",
+    "Analiza cómo las criptomonedas están cambiando la forma en que se gravan las transacciones financieras.",
+    "Explora el papel de los incentivos fiscales en el fomento de la inversión extranjera directa en países latinoamericanos.",
+    "Discute las tendencias actuales en la tributación de la economía digital y su impacto en los ingresos gubernamentales.",
+    "Comparte tus ideas sobre cómo la inteligencia artificial está siendo utilizada para mejorar la recaudación de impuestos y la eficiencia fiscal en América Latina."
+
 
 ];
 async function getGeneratedTweet() {
@@ -134,7 +162,7 @@ const tweet = async () => {
             const trimmedTweet = trimToCompleteSentence(fullTweet);
 
             // 1. Fetch the image URL for "AI" topic
-            const mediaData = await fetchMedia("pesos, efectivo, dinero, monedas, billetes");
+            const mediaData = await fetchMedia("pesos, efectivo, dinero, monedas, pesos chilenos, billetes chile, billetes chile, billetes, monedas chile, monedas chilenas, dinero chile, dinero chileno, dinero efectivo, dinero en efectivo, dinero en pesos, dinero en pesos chilenos, dinero en billetes, dinero en monedas, dinero en billetes chilenos, dinero en monedas chilenas, dinero en billetes chile, dinero en monedas ");
             const filename = `ai_media_${Date.now()}`;
 
             let mediaId;
@@ -164,11 +192,8 @@ const tweet = async () => {
 
 
 
-
 cron.schedule('0 */2 * * *', tweet);
 
 
 
 console.log("Started scheduler to tweet every 2 hours.");
-
-
