@@ -71,97 +71,44 @@ async function fetchMedia(query) {
 
 
 
-const prompts = [
-    "Cómo maximizar tu devolución de impuestos este año?",
-    "Qué estrategias financieras puedes usar para aumentar tu devolución de impuestos?",
-    "Cómo la Inteligencia Artificial está ayudando en la optimización de la declaración de impuestos?",
-    "Cuáles son las herramientas de IA más efectivas para la planificación fiscal?",
-    "Cómo la tecnología está cambiando la forma en que hacemos nuestras declaraciones de impuestos?",
-    "Qué impacto tiene la legislación fiscal en tus inversiones a largo plazo?",
-    "Cómo puedes usar la Inteligencia Artificial para detectar deducciones fiscales que podrías haber pasado por alto?",
-    "Cuál es el futuro de la planificación fiscal con el avance de la Inteligencia Artificial?",
-    "Cómo están las fintechs ayudando a las personas a manejar sus impuestos de manera más eficiente?",
-    "Qué deberías saber sobre las criptomonedas y los impuestos?",
-    "Cuáles son las implicaciones fiscales de invertir en bienes raíces?",
-    "Cómo puedes prepararte para la temporada de impuestos usando tecnología moderna?",
-    "Qué impacto tienen los cambios en las leyes fiscales en los autónomos y freelancers?",
-    "Cómo la planificación fiscal inteligente puede mejorar tu bienestar financiero?",
-    "Qué papel juega la automatización en la eficiencia de la gestión fiscal?",
-    "Cómo elegir un software de impuestos que se adapte a tus necesidades?",
-    "Qué consideraciones fiscales debes tener en cuenta al iniciar un nuevo negocio?",
-    "Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
-    "Cuáles son las últimas novedades en regulaciones fiscales en Latinoamérica?",
-    "Cómo están revolucionando las fintech el sistema tributario en Chile?",
-    "Qué papel juegan las políticas fiscales en la formación de empleos del futuro para grandes empresas?",
-    "Comparte ideas sobre la relación entre la evasión fiscal y la economía en Latinoamérica.",
-    "Cómo impactan las leyes tributarias en el sector salud y médico en Chile?",
-    "Cuáles son los riesgos potenciales de no estar al día con los impuestos para las pequeñas empresas?",
-    "Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
-    "Discute los impactos de la digitalización en la recaudación de impuestos en la era moderna.",
-    "Qué papel juegan las políticas fiscales en la formación de empleos del futuro en Latinoamérica?",
-    "Cómo están beneficiando las nuevas leyes fiscales al sistema de salud en Chile?",
-    "Describe los beneficios de la digitalización en la gestión tributaria.",
-    "Cuál es la intersección entre políticas fiscales y soluciones de energía renovable en Latinoamérica?",
-    "Cómo están cambiando las leyes tributarias en Latinoamérica y qué pueden esperar los trabajadores?",
-    "Destaca la importancia de la regulación fiscal en el transporte moderno en Chile.",
-    "Comparte una perspectiva sobre la automatización impulsada por fintech en contabilidad y seguridad.",
-    "Discute el papel de las políticas fiscales en las predicciones del mercado financiero y económico.",
-    "Comparte ideas sobre la influencia de la regulación tributaria en el arte y diseño modernos.",
-    "¿Reemplazarán las fintech a los contadores? Discute los pros y contras.",
-    "Analiza los efectos de la globalización en la economía chilena y su relación con la tributación internacional.",
-    "Explora cómo la tecnología blockchain está transformando los procesos fiscales en el mundo empresarial.",
-    "Habla sobre los desafíos y beneficios de la digitalización de los registros contables en el sector financiero.",
-    "Examina el impacto de la pandemia de COVID-19 en las políticas fiscales y su influencia en la recuperación económica.",
-    "Reflexiona sobre las implicaciones económicas de la evasión fiscal y las medidas para combatirla en América Latina.",
-    "Comenta sobre la relación entre la sostenibilidad ambiental y las políticas fiscales en la industria energética.",
-    "Analiza cómo las criptomonedas están cambiando la forma en que se gravan las transacciones financieras.",
-    "Explora el papel de los incentivos fiscales en el fomento de la inversión extranjera directa en países latinoamericanos.",
-    "Discute las tendencias actuales en la tributación de la economía digital y su impacto en los ingresos gubernamentales.",
-    "Comparte tus ideas sobre cómo la inteligencia artificial está siendo utilizada para mejorar la recaudación de impuestos y la eficiencia fiscal en América Latina."
+const hardcodedTweets = [
+    "Gabriel Boric en Chile propone reforma tributaria incluyendo impuestos a la riqueza. ¿Qué impacto crees que tendrá en la sociedad? #ReformaTributaria #Chile",
+    "La reforma tributaria en Chile busca recaudar 4,1% del PIB en cuatro años. ¿Cómo afectará esto a la economía nacional? #EconomíaChilena #Impuestos",
+    "Nueva reforma en Chile se enfoca en tributación para ingresos altos. ¿Crees que esto mejorará la equidad en el país? #JusticiaFiscal #Chile",
+    "En Chile, la reforma tributaria propone impuesto a patrimonios mayores a US$ 5 millones. ¿Es esto un paso hacia mayor justicia social? #ImpuestoRiqueza #Chile",
+    "Chile establece nuevo régimen tributario para la gran minería. ¿Influirá positivamente en el desarrollo del sector? #Minería #Chile",
+    "Reforma en Chile busca aumentar carga tributaria para igualar estándares OCDE. ¿Será efectiva para mejorar servicios públicos? #OCDE #Impuestos",
+    "En Chile, la reforma tributaria limita exenciones y combate la evasión fiscal. ¿Mejorará esto la transparencia fiscal? #EvasiónFiscal #Chile",
+    "Se espera que la recaudación fiscal en Chile aumente hasta un 4,1% para 2025. ¿Qué cambios anticipas en los servicios públicos? #RecaudaciónFiscal #Chile",
+    "Ajustes en IVA y boletas de honorarios afectarán a empresas y trabajadores en Chile. ¿Cómo te preparas para este cambio? #IVA #Chile",
+    "Exenciones del IVA en servicios médicos y sociedades profesionales se mantienen en Chile. ¿Beneficiará esto a los profesionales? #ExencionesIVA #Chile",
+    "Servicios profesionales en Chile quedarán exentos de IVA bajo ciertas condiciones. ¿Impactará esto en tu actividad profesional? #IVA #ServiciosProfesionales",
+    "Todos los servicios en Chile estarán afectos al IVA desde 2023. ¿Cómo crees que esto influirá en la economía? #IVA #EconomíaChilena",
+    "La Ley 21.420 en Chile afectará todos los servicios con IVA. ¿Qué estrategias seguirás para adaptarte? #Ley21420 #IVA",
+    "En Chile, la Ley mantiene exenciones de IVA para ciertos servicios. ¿Cómo valoras estas excepciones? #IVA #ExencionesFiscales",
+    "La reforma tributaria en Chile se enfoca en equidad y justicia. ¿Crees que logrará sus objetivos? #ReformaTributaria #JusticiaSocial",
+    "Chile espera que la reforma tributaria atraiga a estructuras fiscales avanzadas. ¿Qué impacto tendrá en la inversión? #EstructuraFiscal #Inversión",
+    "Chile implementa exención de IVA para sociedades profesionales. ¿Cómo cambiará esto el panorama fiscal? #ExenciónIVA #Fiscalidad",
+    "La nueva regulación sobre sociedades profesionales afectará el IVA en Chile. ¿Qué opinas sobre estas medidas? #RegulaciónFiscal #IVA",
+    "Con la Ley 21.420, Chile introduce cambios significativos en el IVA. ¿Cómo adaptarás tu negocio a estos cambios? #Ley21420 #Negocios",
+    "La entrada en vigencia de la Ley 21.420 en Chile modificará el IVA. ¿Cuál crees que será el mayor desafío para las empresas? #IVA #DesafíosEmpresariales",
 
 
+    // ... add more tweets here (up to 20 or more)
 ];
-async function getGeneratedTweet() {
-    try {
-        // Randomly pick a prompt from the prompts array
-        const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
 
-        const response = await openai.completions.create({
-            model: "gpt-3.5-turbo-instruct",
-            prompt: randomPrompt,
-            max_tokens: 300,
-            temperature: 0.7
-        });
 
-        return response.choices[0].text.trim();
-    } catch (error) {
-        console.log("Error generating tweet:", error);
-    }
+function getHourlyTweet() {
+    const currentHour = new Date().getHours();
+    const tweetIndex = currentHour % hardcodedTweets.length;
+    return hardcodedTweets[tweetIndex];
 }
-const appendHashTagsAndMentions = (tweetContent) => {
-    return `${tweetContent} #impuestos`
-};
-
-
-
-const trimToCompleteSentence = (tweet) => {
-    if (tweet.length <= 280) return tweet;
-
-    let lastValidEnd = tweet.lastIndexOf('.', 279);
-    if (lastValidEnd === -1) lastValidEnd = tweet.lastIndexOf('!', 279);
-    if (lastValidEnd === -1) lastValidEnd = tweet.lastIndexOf('?', 279);
-
-    return lastValidEnd !== -1 ? tweet.substring(0, lastValidEnd + 1) : tweet.substring(0, 277) + "...";
-};
 
 const tweet = async () => {
     try {
-        const tweetContent = await getGeneratedTweet();
+        const tweetContent = getHourlyTweet();
         if (tweetContent) {
-            const fullTweet = appendHashTagsAndMentions(tweetContent);
-            const trimmedTweet = trimToCompleteSentence(fullTweet);
-
-            // 1. Fetch the image URL for "AI" topic
+            // Fetch the image URL for "AI" topic
             const mediaData = await fetchMedia("pesos, efectivo, dinero, monedas, pesos chilenos, billetes chile, billetes chile, billetes, monedas chile, monedas chilenas, dinero chile, dinero chileno, dinero efectivo, dinero en efectivo, dinero en pesos, dinero en pesos chilenos, dinero en billetes, dinero en monedas, dinero en billetes chilenos, dinero en monedas chilenas, dinero en billetes chile, dinero en monedas ");
             const filename = `ai_media_${Date.now()}`;
 
@@ -176,8 +123,9 @@ const tweet = async () => {
                 await downloadVideo(mediaData.url, localVideoPath);
                 mediaId = await twitterClient.v1.uploadMedia(localVideoPath);
             }
+
             await twitterClient.v2.tweet({
-                text: trimmedTweet,
+                text: tweetContent,
                 media: {
                     media_ids: [mediaId]
                 }
@@ -190,10 +138,7 @@ const tweet = async () => {
     }
 };
 
+cron.schedule('0 * * * *', tweet);
 
 
-cron.schedule('0 */2 * * *', tweet);
-
-
-
-console.log("Started scheduler to tweet every 2 hours.");
+console.log("Started scheduler to tweet every hour.");
