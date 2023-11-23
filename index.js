@@ -72,9 +72,6 @@ async function fetchMedia(query) {
 
 
 const hardcodedTweets = [
-    "La reforma tributaria en Chile apunta a recaudar 4,1% del PIB en cuatro años, una medida clave en la política fiscal. ¿Cómo crees que esto afectará la economía nacional y el bienestar de los ciudadanos? #EconomíaChilena #Impuestos #Chile",
-
-    "Chile se enfoca en una nueva reforma tributaria, dirigida a la tributación de ingresos altos, buscando mayor equidad. ¿Opinas que esto mejorará la justicia fiscal en el país? ¿Cómo te afectará personalmente? #Justicia #Dinero #Chile",
 
     "Reforma tributaria en Chile propone impuestos a patrimonios mayores a US$ 5 millones, un paso hacia la justicia social. ¿Crees que esto es suficiente para mejorar la equidad en el país? Comparte tus pensamientos. #Impuestos #Chile",
 
@@ -111,6 +108,11 @@ const hardcodedTweets = [
     "La entrada en vigencia de la Ley 21.420 en Chile modificará el IVA. ¿Cuál crees que será el mayor desafío para las empresas? ¿Cómo afectará esto a la competitividad y sostenibilidad empresarial? #IVA #DesafíosEmpresariales",
 
     "Gabriel Boric en Chile propone una reforma tributaria incluyendo impuestos a la riqueza. ¿Qué impacto crees que tendrá esta propuesta en la sociedad y la distribución de la riqueza? ¿Será un paso hacia una mayor justicia social? #ReformaTributaria #Chile",
+
+    "La reforma tributaria en Chile apunta a recaudar 4,1% del PIB en cuatro años, una medida clave en la política fiscal. ¿Cómo crees que esto afectará la economía nacional y el bienestar de los ciudadanos? #EconomíaChilena #Impuestos #Chile",
+
+    "Chile se enfoca en una nueva reforma tributaria, dirigida a la tributación de ingresos altos, buscando mayor equidad. ¿Opinas que esto mejorará la justicia fiscal en el país? ¿Cómo te afectará personalmente? #Justicia #Dinero #Chile",
+
 
     // ... add more tweets here (up to 20 or more)
 ];
