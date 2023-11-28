@@ -73,6 +73,42 @@ async function fetchMedia(query) {
 
 const hardcodedTweets = [
 
+
+
+    "México introduce nuevas regulaciones fiscales para combatir la evasión y promover la transparencia. ¿Qué efectos tendrá en el clima de negocios? #Impuestos #México",
+
+    "Colombia avanza en su plan de reforma tributaria, buscando equidad y justicia fiscal. ¿Cómo cambiará esto el panorama económico? #Tributaria #Chile",
+
+    "Perú implementa medidas para atraer inversión extranjera, con incentivos fiscales y simplificación de procesos. ¿Serán efectivas? #Impuestos #Inversión",
+
+    "Con la Ley 21.420, todos los servicios en Chile se verán afectados por el IVA. ¿Qué estrategias seguirás para adaptarte a estos cambios? ¿Crees que afectará positivamente a la economía? #Chile #Inversión",
+
+    "La Ley en Chile mantiene exenciones de IVA para ciertos servicios. ¿Cómo valoras estas excepciones en términos de justicia fiscal? ¿Crees que benefician a sectores específicos? #Chile #Inversión",
+
+    "La reforma tributaria en Chile se centra en equidad y justicia. ¿Crees que estas medidas lograrán sus objetivos? ¿Qué impacto esperas ver en la sociedad? #ReformaTributaria #JusticiaSocial",
+
+    "Chile espera que la reforma tributaria atraiga estructuras fiscales avanzadas. ¿Qué impacto crees que tendrá esto en la inversión extranjera y en el crecimiento económico? #Chile #Inversión",
+
+    "Chile implementa exención de IVA para sociedades profesionales. ¿Cómo cambiará esto el panorama fiscal del país? ¿Crees que beneficiará a la economía en general? #Chile #Inversión",
+
+    "Chile debate reformas en el sistema de pensiones, con posibles impactos fiscales. ¿Mejorará esto la seguridad social? #Pensiones #Chile",
+
+    "Ecuador anuncia nuevos incentivos fiscales para el sector tecnológico, buscando impulsar la innovación. ¿Cuál será el impacto en la economía digital? #Tecnología #Ecuador",
+
+    "Bolivia refuerza la lucha contra la evasión fiscal, con nuevas regulaciones y controles. ¿Cómo afectará esto a las empresas? #Impuestos #Bolivia",
+
+    "Paraguay se enfoca en la reforma fiscal para mejorar la infraestructura y los servicios públicos. ¿Qué esperas de esta iniciativa? #Paraguay #ReformaFiscal",
+
+    "Guatemala implementa cambios fiscales para mejorar la educación y la salud. ¿Cómo cambiará esto la calidad de vida? #Impuestos #Guatemala",
+
+    "Panamá se destaca por su crecimiento económico, con políticas fiscales orientadas a la inversión y el desarrollo. ¿Qué lecciones ofrece para la región? #Panamá #Economía",
+
+    "Gabriel Boric en Chile propone una reforma tributaria incluyendo impuestos a la riqueza. ¿Qué impacto crees que tendrá esta propuesta en la sociedad y la distribución de la riqueza? ¿Será un paso hacia una mayor justicia social? #ReformaTributaria #Chile",
+
+    "La reforma tributaria en Chile apunta a recaudar 4,1% del PIB en cuatro años, una medida clave en la política fiscal. ¿Cómo crees que esto afectará la economía nacional y el bienestar de los ciudadanos? #EconomíaChilena #Impuestos #Chile",
+
+    "Chile se enfoca en una nueva reforma tributaria, dirigida a la tributación de ingresos altos, buscando mayor equidad. ¿Opinas que esto mejorará la justicia fiscal en el país? ¿Cómo te afectará personalmente? #Justicia #Dinero #Chile",
+
     "Reforma tributaria en Chile propone impuestos a patrimonios mayores a US$ 5 millones, un paso hacia la justicia social. ¿Crees que esto es suficiente para mejorar la equidad en el país? Comparte tus pensamientos. #Impuestos #Chile",
 
     "Chile establece un nuevo régimen tributario para la gran minería, buscando un impacto positivo en el sector. ¿Crees que esto beneficiará el desarrollo económico? ¿Cómo influirá esto en el mercado laboral? #Minería #Chile",
@@ -99,21 +135,6 @@ const hardcodedTweets = [
 
     "Chile espera que la reforma tributaria atraiga estructuras fiscales avanzadas. ¿Qué impacto crees que tendrá esto en la inversión extranjera y en el crecimiento económico? #EstructuraFiscal #Inversión",
 
-    "Chile implementa exención de IVA para sociedades profesionales. ¿Cómo cambiará esto el panorama fiscal del país? ¿Crees que beneficiará a la economía en general? #ExenciónIVA #Fiscalidad",
-
-    "La nueva regulación sobre sociedades profesionales en Chile traerá cambios en el IVA. ¿Cuál es tu opinión sobre estas medidas? ¿Cómo impactarán en la economía y en los profesionales? #RegulaciónFiscal #IVA",
-
-    "Con la Ley 21.420, Chile introduce cambios significativos en el IVA. ¿Cómo adaptarás tu negocio a estos cambios? ¿Crees que estos ajustes favorecerán el crecimiento económico? #Ley21420 #Negocios",
-
-    "La entrada en vigencia de la Ley 21.420 en Chile modificará el IVA. ¿Cuál crees que será el mayor desafío para las empresas? ¿Cómo afectará esto a la competitividad y sostenibilidad empresarial? #IVA #DesafíosEmpresariales",
-
-    "Gabriel Boric en Chile propone una reforma tributaria incluyendo impuestos a la riqueza. ¿Qué impacto crees que tendrá esta propuesta en la sociedad y la distribución de la riqueza? ¿Será un paso hacia una mayor justicia social? #ReformaTributaria #Chile",
-
-    "La reforma tributaria en Chile apunta a recaudar 4,1% del PIB en cuatro años, una medida clave en la política fiscal. ¿Cómo crees que esto afectará la economía nacional y el bienestar de los ciudadanos? #EconomíaChilena #Impuestos #Chile",
-
-    "Chile se enfoca en una nueva reforma tributaria, dirigida a la tributación de ingresos altos, buscando mayor equidad. ¿Opinas que esto mejorará la justicia fiscal en el país? ¿Cómo te afectará personalmente? #Justicia #Dinero #Chile",
-
-
     // ... add more tweets here (up to 20 or more)
 ];
 
@@ -130,7 +151,7 @@ const tweet = async () => {
         const tweetContent = getNextTweet();
         if (tweetContent) {
             // Fetch the image URL for "AI" topic
-            const mediaData = await fetchMedia("pesos, efectivo, dinero, monedas, pesos chilenos, billetes chile, billetes chile, billetes, monedas chile, monedas chilenas, dinero chile, dinero chileno, dinero efectivo, dinero en efectivo, dinero en pesos, dinero en pesos chilenos, dinero en billetes, dinero en monedas, dinero en billetes chilenos, dinero en monedas chilenas, dinero en billetes chile, dinero en monedas ");
+            const mediaData = await fetchMedia("pesos, efectivo, dinero, monedas, pesos chilenos, oro en Chile, plata, ");
             const filename = `ai_media_${Date.now()}`;
 
             let mediaId;
@@ -159,7 +180,8 @@ const tweet = async () => {
     }
 };
 
-cron.schedule('0 * * * *', tweet);
+cron.schedule('* */1 * * *', tweet);
 
 console.log("Started scheduler to tweet every hour.");
+
 
